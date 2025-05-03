@@ -25,6 +25,16 @@ st.markdown(
         color: white;
         font-weight: bold;
     }
+    .mitigation-box {
+        background-color: #fff3f3;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    .mitigation-title {
+        color: #d32f2f;
+        font-weight: bold;
+    }
     </style>
     """, unsafe_allow_html=True
 )
@@ -62,6 +72,50 @@ if st.button("🚀 Run Prediction"):
     st.markdown("---")
     if prediction == 1:
         st.error("⚠️ **Anomaly Detected: False Data Injection Attack**")
+        
+        # Mitigation Strategies Section
+        st.markdown("""
+        <div class='mitigation-box'>
+            <h3 class='mitigation-title'>🛡️ Recommended Mitigation Strategies</h3>
+            
+            <h4>1. Immediate Actions</h4>
+            <ul>
+                <li>Isolate affected systems from the network</li>
+                <li>Review and verify all recent system changes</li>
+                <li>Check for unauthorized access attempts</li>
+            </ul>
+            
+            <h4>2. Security Enhancements</h4>
+            <ul>
+                <li>Implement multi-factor authentication (MFA)</li>
+                <li>Update all security protocols and encryption methods</li>
+                <li>Review and update access control lists</li>
+            </ul>
+            
+            <h4>3. Monitoring Improvements</h4>
+            <ul>
+                <li>Enable real-time anomaly detection alerts</li>
+                <li>Implement continuous system monitoring</li>
+                <li>Set up automated response protocols</li>
+            </ul>
+            
+            <h4>4. Long-term Prevention</h4>
+            <ul>
+                <li>Regular security audits and penetration testing</li>
+                <li>Employee security awareness training</li>
+                <li>Implement zero-trust architecture</li>
+                <li>Regular backup of critical data</li>
+            </ul>
+            
+            <h4>5. Technical Controls</h4>
+            <ul>
+                <li>Implement data validation at all entry points</li>
+                <li>Use secure communication protocols (TLS/SSL)</li>
+                <li>Regularly update and patch all systems</li>
+                <li>Implement network segmentation</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
     else:
         st.success("✅ **System Operating Normally: No Anomaly Detected**")
 
